@@ -1,36 +1,7 @@
-# Aprender Web 💻
-
-Página web creada para aprender programación y desarrollo web desde cero.
-
-## 📚 Sobre el proyecto
-
-Este proyecto tiene como objetivo ofrecer un espacio sencillo y práctico
-para aprender los conceptos básicos de programación y desarrollo web.
-
-## 🚀 Tecnologías utilizadas
-
-- HTML5
-- CSS3
-- JavaScript
-- Node.js
-
-## 📁 Estructura del proyecto
-
-- `index.html` → Página principal
-- `style.css` → Estilos de la página
-- `script.js` → Funcionalidades con JavaScript
-- `server.js` → Servidor del proyecto
-- `programacion-portada.png` → Imagen principal
-
-## 🎯 Objetivo
-
-Crear una plataforma educativa para que cualquier persona pueda comenzar
-a aprender programación de manera sencilla y progresiva.
-
-## 📌 Estado del proyecto
-
-🚧 En desarrollo
-
-## 👨‍💻 Autor
-
-Rafael
+Learn Web 💻 Website created to learn programming and web development from scratch. 
+📚 About the project This project aims to offer a simple and practical space to learn the basic concepts of programming and web development. 🚀 Technologies used HTML5 CSS3 JavaScript Node.js
+📁 Project structure index.html → Main page style.css → Page styles script.js → JavaScript functionalities server.js → Project server programming-cover.png → Main image 
+🎯 Objective Create an educational platform so that anyone can start learning programming in a simple and progressive way. 
+📌 Project status :
+🚧 Developing 👨‍ 
+💻 Author Raphael
