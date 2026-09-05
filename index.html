@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primera web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Sora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="contenedor">
+      <header>
+        <div class="presentacion-texto">
+        <p class="etiqueta">MI PRIMER PROYECTO</p>
+        <h1>Aprender programación,<br /><span>una línea a la vez.</span></h1>
+        <p class="intro">Esta página está construida con HTML, CSS y JavaScript. Explorá estos tres bloques y sigue progresando.</p>
+        <div class="acciones-cabecera">
+          <button id="cambiar-tema" class="tema" type="button" aria-pressed="false">🌙 Modo oscuro</button>
+        </div>
+        <form class="cuenta" id="form-cuenta">
+          <p class="etiqueta">TU CUENTA</p>
+          <div id="cuenta-anonima" class="cuenta-fila">
+            <label class="sr-only" for="cuenta-nombre-input">Nombre</label>
+            <input id="cuenta-nombre-input" name="nombre" autocomplete="username" placeholder="Nombre" maxlength="24" required />
+            <label class="sr-only" for="cuenta-contrasena">Contraseña</label>
+            <input id="cuenta-contrasena" name="contrasena" type="password" autocomplete="current-password" placeholder="Contraseña" required />
+            <button type="submit" id="entrar">Entrar</button>
+            <button type="button" class="tema" id="registrar">Crear cuenta</button>
+          </div>
+          <div id="cuenta-sesion" class="cuenta-fila" hidden>
+            <p class="cuenta-hola">Hola, <strong id="cuenta-nombre"></strong>. Tu progreso se guarda en el servidor.</p>
+            <button type="button" class="tema" id="salir">Salir</button>
+          </div>
+          <p id="cuenta-mensaje" class="cuenta-mensaje" aria-live="polite"></p>
+        </form>
+        </div>
+        <img class="imagen-portada" src="programacion-portada.png" alt="Laptop con código en Visual Studio Code y teclado iluminado" />
+      </header>
+
+      <section class="como-empezar" aria-label="Cómo usar esta web">
+        <div>
+          <p class="etiqueta">¿POR DÓNDE EMPIEZO?</p>
+          <h2>Aprendé en tres pasos sencillos</h2>
+        </div>
+        <ol>
+          <li><strong>1. Mirá</strong><span>Elegí un video tutorial.</span></li>
+          <li><strong>2. Practicá</strong><span>Respondé los ejercicios.</span></li>
+          <li><strong>3. Creá</strong><span>Probá un proyecto propio.</span></li>
+        </ol>
+      </section>
+
+      <section class="tarjetas" aria-label="Tecnologías de la web">
+        <article class="tarjeta html">
+          <div class="numero">01</div>
+          <h2>HTML</h2>
+          <p>Le da estructura y contenido a la página: títulos, textos, botones e imágenes.</p>
+          <code>&lt;h1&gt;Hola mundo&lt;/h1&gt;</code>
+        </article>
+        <article class="tarjeta css">
+          <div class="numero">02</div>
+          <h2>CSS</h2>
+          <p>Define el aspecto: colores, tamaños, espacios, tipografías y animaciones.</p>
+          <code>color: oklch(0.18 0.004 85);</code>
+        </article>
+        <article class="tarjeta js">
+          <div class="numero">03</div>
+          <h2>JavaScript</h2>
+          <p>Agrega comportamiento e interacción: hace que la web responda a acciones.</p>
+          <code>boton.onclick = ...</code>
+        </article>
+        <article class="tarjeta python">
+          <div class="numero">04</div>
+          <h2>Python</h2>
+          <p>Sirve para automatizar tareas, analizar datos y crear programas de muchas clases.</p>
+          <code>print("Hola mundo")</code>
+        </article>
+      </section>
+
+      <section class="reto">
+        <div>
+          <p class="etiqueta">RETO RÁPIDO</p>
+          <h2><a class="reto-enlace" href="https://www.codechef.com/html-online-compiler" target="_blank" rel="noopener noreferrer">¿Listo para ejecutar código?</a></h2>
+        </div>
+        <a class="boton-enlace" href="https://www.codechef.com/html-online-compiler" target="_blank" rel="noopener noreferrer">Abrir editor HTML/CSS <span>→</span></a>
+      </section>
+      <section class="ejercicios">
+        <p class="etiqueta">PRACTICÁ</p>
+        <h2>Ejercicios por lenguaje</h2>
+        <p>Elegí un lenguaje y resolvé sus 10 preguntas.</p>
+        <div class="lenguajes" role="tablist" aria-label="Elegir lenguaje">
+          <button class="lenguaje activo" type="button" data-lenguaje="html">HTML · 10</button>
+          <button class="lenguaje bloqueado" type="button" data-lenguaje="css" disabled>CSS · 🔒</button>
+          <button class="lenguaje bloqueado" type="button" data-lenguaje="javascript" disabled>JavaScript · 🔒</button>
+          <button class="lenguaje bloqueado" type="button" data-lenguaje="python" disabled>Python · 🔒</button>
+        </div>
+        <div class="progreso"><div id="barra-progreso"></div></div>
+        <p id="contador" class="contador">Pregunta 1 de 10</p>
+        <h3 id="pregunta"></h3>
+        <div id="respuestas" class="respuestas"></div>
+        <p id="resultado" aria-live="polite"></p>
+        <button id="siguiente" class="siguiente" type="button" disabled>Siguiente pregunta →</button>
+        <button id="reintentar" class="reintentar" type="button" hidden>↻ Reintentar este nivel</button>
+      </section>
+
+      <section class="mi-progreso">
+        <p class="etiqueta">TU CAMINO</p>
+        <h2>Mi progreso</h2>
+        <div class="progreso-tarjetas">
+          <article class="progreso-tarjeta" data-resumen="html"><div><h3>HTML</h3><strong>0%</strong></div><div class="barra-resumen"><div></div></div><p>0 de 10 respondidas</p></article>
+          <article class="progreso-tarjeta" data-resumen="css"><div><h3>CSS</h3><strong>0%</strong></div><div class="barra-resumen"><div></div></div><p>0 de 10 respondidas</p></article>
+          <article class="progreso-tarjeta" data-resumen="javascript"><div><h3>JavaScript</h3><strong>0%</strong></div><div class="barra-resumen"><div></div></div><p>0 de 10 respondidas</p></article>
+          <article class="progreso-tarjeta" data-resumen="python"><div><h3>Python</h3><strong>0%</strong></div><div class="barra-resumen"><div></div></div><p>0 de 10 respondidas</p></article>
+        </div>
+      </section>
+
+      <section class="desafio-diario">
+        <p class="etiqueta">UN POCO CADA DÍA</p>
+        <h2>Desafío diario</h2>
+        <p id="lenguaje-diario" class="lenguaje-diario"></p>
+        <h3 id="pregunta-diaria"></h3>
+        <div id="opciones-diarias" class="opciones-diarias"></div>
+        <p id="resultado-diario" aria-live="polite"></p>
+      </section>
+
+      <section class="proyectos">
+        <p class="etiqueta">APLICÁ LO APRENDIDO</p>
+        <h2>Proyectos simples</h2>
+        <p class="intro">Elegí un desafío, escribí el código en VS Code y marcá el proyecto al terminarlo.</p>
+        <div class="proyectos-lista">
+          <article class="proyecto" data-proyecto="boton">
+            <span class="proyecto-numero">01</span>
+            <h3>Crear un botón</h3>
+            <p>Creá un botón que cambie de color cuando pasás el mouse encima.</p>
+            <ul><li>Usá <code>&lt;button&gt;</code></li><li>Agregá colores con CSS</li><li>Probá <code>:hover</code></li></ul>
+            <button class="terminar-proyecto" type="button">Marcar como terminado</button>
+          </article>
+          <article class="proyecto" data-proyecto="tarjeta">
+            <span class="proyecto-numero">02</span>
+            <h3>Hacer una tarjeta</h3>
+            <p>Diseñá una tarjeta de perfil con una imagen, nombre y descripción.</p>
+            <ul><li>Usá <code>&lt;div&gt;</code> y <code>&lt;img&gt;</code></li><li>Agregá bordes redondeados</li><li>Elegí tus propios colores</li></ul>
+            <button class="terminar-proyecto" type="button">Marcar como terminado</button>
+          </article>
+          <article class="proyecto" data-proyecto="contador">
+            <span class="proyecto-numero">03</span>
+            <h3>Crear un contador</h3>
+            <p>Hacé botones para sumar y restar un número con JavaScript.</p>
+            <ul><li>Creá dos botones</li><li>Usá una variable <code>let</code></li><li>Actualizá el número en pantalla</li></ul>
+            <button class="terminar-proyecto" type="button">Marcar como terminado</button>
+          </article>
+          <article class="proyecto" data-proyecto="formulario">
+            <span class="proyecto-numero">04</span>
+            <h3>Formulario de contacto</h3>
+            <p>Armá un formulario para que una persona escriba su nombre y mensaje.</p>
+            <ul><li>Usá <code>&lt;input&gt;</code> y <code>&lt;textarea&gt;</code></li><li>Agregá etiquetas claras</li><li>Validá que no queden campos vacíos</li></ul>
+            <button class="terminar-proyecto" type="button">Marcar como terminado</button>
+          </article>
+          <article class="proyecto" data-proyecto="calculadora">
+            <span class="proyecto-numero">05</span>
+            <h3>Mini calculadora</h3>
+            <p>Creá dos campos numéricos y un botón que sume sus valores.</p>
+            <ul><li>Usá dos <code>&lt;input&gt;</code></li><li>Leé los valores con JavaScript</li><li>Mostrá el resultado en pantalla</li></ul>
+            <button class="terminar-proyecto" type="button">Marcar como terminado</button>
+          </article>
+          <article class="proyecto" data-proyecto="lista-tareas">
+            <span class="proyecto-numero">06</span>
+            <h3>Lista de tareas</h3>
+            <p>Hacé una app sencilla para agregar y tachar tareas pendientes.</p>
+            <ul><li>Escribí una tarea en un campo</li><li>Agregala a una lista</li><li>Marcala al completarla</li></ul>
+            <button class="terminar-proyecto" type="button">Marcar como terminado</button>
+          </article>
+        </div>
+      </section>
+
+      <section class="tutoriales">
+        <p class="etiqueta">APRENDÉ MIRANDO</p>
+        <h2>Tutoriales en video</h2>
+        <p class="intro">Mirá un video, volvé a esta página y practicá lo aprendido con los ejercicios.</p>
+        <div class="videos">
+          <article class="video-tarjeta">
+            <iframe src="https://www.youtube-nocookie.com/embed/XqFR2lqBYPs" title="Tutorial de HTML y CSS desde cero" loading="lazy" allowfullscreen></iframe>
+            <h3>HTML y CSS desde cero</h3>
+            <p>Aprendé a crear la estructura y el estilo de una página web.</p>
+          </article>
+          <article class="video-tarjeta">
+            <iframe src="https://www.youtube-nocookie.com/embed/QoC4RxNIs5M" title="Tutorial de JavaScript desde cero" loading="lazy" allowfullscreen></iframe>
+            <h3>JavaScript para principiantes</h3>
+            <p>Descubrí cómo hacer que una web responda a clics y acciones.</p>
+          </article>
+          <article class="video-tarjeta">
+            <iframe src="https://www.youtube-nocookie.com/embed/DLikpfc64cA" title="Tutorial de Python desde cero" loading="lazy" allowfullscreen></iframe>
+            <h3>Python desde cero</h3>
+            <p>Conocé las bases de Python, un lenguaje versátil y fácil de leer.</p>
+          </article>
+        </div>
+      </section>
+      <footer>Hecho por vos, con curiosidad y código.</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
